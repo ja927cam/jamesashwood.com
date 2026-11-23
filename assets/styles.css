@@ -1302,3 +1302,37 @@ html[data-theme="light"] .icon-moon { display: none; }
   line-height: 1.6;
   color: var(--muted);
 }
+
+/* Portrait -------------------------------------------------------------- */
+
+.intro-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.intro-title { min-width: 0; }
+
+.portrait {
+  flex: none;
+  width: 140px;
+  margin: 0;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+}
+
+@media (max-width: 600px) {
+  .intro-head {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .portrait { width: 96px; }
+}

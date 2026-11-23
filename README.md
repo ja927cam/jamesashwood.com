@@ -19,6 +19,7 @@ source for my CV.
 │   ├── styles.css
 │   ├── main.js             # theme toggle, mobile nav, scroll reveals
 │   ├── fonts/              # Newsreader + IBM Plex Mono (OFL)
+│   ├── portrait.jpg        # homepage portrait
 │   ├── favicon.svg
 │   └── og.png              # social preview image
 ├── cv/
@@ -68,8 +69,7 @@ The PDF is linked from the CV page and the contact section. Replace
 
 ### Things you may want to add
 
-- **A photo.** Drop a portrait at `assets/photo.jpg` and add an `<img>` to the hero or
-  about section. The current design deliberately works without one.
+- **A photo.** The homepage uses `assets/portrait.jpg`; replace that file to update it.
 - **Your phone number** is on the CV but intentionally left off the website.
 - **Analytics** (e.g. Plausible or GoatCounter) can be added as a single script tag in
   `<head>`.
