@@ -53,6 +53,13 @@ CNAME               GitHub Pages custom domain
   based only on projects James named and reproduce facts from the source repositories.
 - Project and CV facts may be used, but avoid inventing narrative, motives or specifics.
 
+## OpenCode skill
+
+A global skill `jamesashwood-site` lives at
+`~/.config/opencode/skills/jamesashwood-site/SKILL.md`. It encodes the content-approval
+rules, page update workflows, QA checks and deploy steps for this repo. Keep it in sync
+when the site structure changes.
+
 ## CV
 
 ```bash

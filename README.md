@@ -32,6 +32,21 @@ source for my CV.
 └── sitemap.xml
 ```
 
+## Updating with OpenCode
+
+There is a global skill for this site at
+`~/.config/opencode/skills/jamesashwood-site/SKILL.md`. Once OpenCode has loaded it, you
+can just say things like:
+
+- “Add this idea: …”
+- “Write a note about … — publish it”
+- “Update my CV with … and push”
+- “Change the homepage copy to …”
+
+The skill covers the content rules, note/idea templates, CV rebuild, checks (including
+`scripts/check_site.py`) and deployment to `main`. Copy the skill directory to another
+machine if you work from there.
+
 ## Local preview
 
 Any static server works:
