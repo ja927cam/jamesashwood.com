@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ideas — James Ashwood</title>
+<meta name="description" content="Things James Ashwood would like to build or understand: evaluation, verification, structured data, local models and simulation.">
+<link rel="canonical" href="https://www.jamesashwood.com/ideas/">
+<meta name="author" content="James Ashwood">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101210" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.jamesashwood.com/ideas/">
+<meta property="og:title" content="Ideas — James Ashwood">
+<meta property="og:description" content="Things I would like to build or understand. Working notes, not commitments.">
+<meta property="og:image" content="https://www.jamesashwood.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg?v=5" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=5">
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead" id="top">
+  <div class="shell masthead-inner">
+    <a class="wordmark" href="/" aria-label="James Ashwood, home">
+      <span class="wordmark-mark" aria-hidden="true"></span>
+      <span>James Ashwood</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="/">About</a>
+      <a href="/work/">Work</a>
+      <a href="/notes/">Notes</a>
+      <a class="active" href="/ideas/">Ideas</a>
+      <a href="/cv/">CV</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="masthead-tools">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="shell page-section">
+    <header class="page-head">
+      <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Ideas</p>
+      <h1>Things to chase<span class="period">.</span></h1>
+      <p class="page-intro">
+        Things I'd like to build or understand. None of these are commitments — they're notes
+        to myself, kept in public in case they're useful to someone else. If one overlaps with
+        something you're working on, I'd like to hear about it.
+      </p>
+      <div class="page-meta">
+        <span>6 ideas · updated November 2026</span>
+        <a href="mailto:contact@jamesashwood.com">Suggest one ↗</a>
+      </div>
+    </header>
+
+    <div class="idea-list">
+      <article class="idea" id="evals">
+        <span class="idea-num">01</span>
+        <div>
+          <h3>Evaluation as a first-class artefact</h3>
+          <p>
+            The gap between a demo and a product is usually an evaluation set. I'd like to build
+            tooling that treats evals as versioned artefacts: prompts, expected outputs, rubrics,
+            cost and latency budgets in one place, runnable on every change. The interesting
+            design question is making it easy enough that people write the cases before they ship.
+          </p>
+          <ul class="idea-tags"><li>LLMs</li><li>Evaluation</li><li>Tooling</li></ul>
+        </div>
+        <span class="idea-status">Open question</span>
+      </article>
+
+      <article class="idea" id="verification">
+        <span class="idea-num">02</span>
+        <div>
+          <h3>Verification as an LLM safety net</h3>
+          <p>
+            Generated code is persuasive, not correct. If a model has to emit a type, a proof
+            obligation or a test it cannot rewrite, the burden shifts from trusting the output to
+            checking it. I want to understand where lightweight verification — types, contracts,
+            property tests — catches real failures without making the system unusable. The hard
+            part is usually the interface, not the theorem.
+          </p>
+          <ul class="idea-tags"><li>Formal methods</li><li>Machine learning</li><li>Compilers</li></ul>
+        </div>
+        <span class="idea-status">Reading</span>
+      </article>
+
+      <article class="idea" id="spreadsheets">
+        <span class="idea-num">03</span>
+        <div>
+          <h3>A compiler for spreadsheet intent</h3>
+          <p>
+            Spreadsheets are the world's most popular programming environment and one of the
+            least understood. A model can read the grid, but the meaning lives in formulas,
+            formatting and convention. I'd like to build a small system that extracts intent from
+            a workbook and emits a validated, reproducible transformation instead of another wall
+            of text.
+          </p>
+          <ul class="idea-tags"><li>Structured data</li><li>LLM tooling</li><li>Compilers</li></ul>
+        </div>
+        <span class="idea-status">To build</span>
+      </article>
+
+      <article class="idea" id="small-models">
+        <span class="idea-num">04</span>
+        <div>
+          <h3>Small models, sharp tools</h3>
+          <p>
+            Most tasks inside a business are narrow. A small local model with a constrained
+            interface, good retrieval and a tight eval set can be cheaper, faster and more private
+            than a general assistant. The interesting question is how much product quality comes
+            from the model versus the tool around it — and whether "good enough" is a stable
+            place to stand.
+          </p>
+          <ul class="idea-tags"><li>Local models</li><li>Product</li><li>Privacy</li></ul>
+        </div>
+        <span class="idea-status">To build</span>
+      </article>
+
+      <article class="idea" id="tokenisation">
+        <span class="idea-num">05</span>
+        <div>
+          <h3>Tokenisation is a product decision</h3>
+          <p>
+            Token counts shape latency, cost and what fits in context, yet they are usually
+            treated as an implementation detail. I'd like to collect examples where changing the
+            representation — not the model — changed the economics of a feature, and turn that
+            into a practical guide. Tables, logs, JSON and code all have different shapes of waste.
+          </p>
+          <ul class="idea-tags"><li>LLMs</li><li>Cost</li><li>Writing</li></ul>
+        </div>
+        <span class="idea-status">Thinking</span>
+      </article>
+
+      <article class="idea" id="telemetry">
+        <span class="idea-num">06</span>
+        <div>
+          <h3>Telemetry for racing simulators</h3>
+          <p>
+            Racing simulators produce high-frequency, multi-channel telemetry; most of it is
+            thrown away or plotted badly. I'd like a small pipeline that captures a stint, aligns
+            it with setup changes and produces a driver-readable summary. The same problems —
+            sampling, alignment, missing data — show up in any real-time system.
+          </p>
+          <ul class="idea-tags"><li>Simulation</li><li>Data</li><li>Motorsport</li></ul>
+        </div>
+        <span class="idea-status">Prototype</span>
+      </article>
+    </div>
+
+    <p class="page-meta" style="margin-top: 34px; margin-bottom: 40px;">
+      <span>Working on one of these?</span>
+      <a href="mailto:contact@jamesashwood.com">contact@jamesashwood.com</a>
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer shell">
+  <p>© <span id="year">2026</span> James Ashwood</p>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="/">About</a>
+    <a href="/work/">Work</a>
+    <a href="/notes/">Notes</a>
+    <a href="/ideas/">Ideas</a>
+    <a href="/cv/">CV</a>
+  </nav>
+  <a href="#top" class="to-top">Top <span aria-hidden="true">↑</span></a>
+</footer>
+
+<script src="/assets/main.js?v=5" defer></script>
+</body>
+</html>

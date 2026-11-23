@@ -1,0 +1,172 @@
+% ==========================================================================
+%  James Ashwood — Curriculum Vitae
+%  Compile with: pdflatex james-ashwood-cv.tex  (run twice for links)
+% ==========================================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.35cm,top=1.05cm,bottom=0.95cm]{geometry}
+\usepackage{mathpazo}                 % Palatino body text
+\usepackage[scaled=0.92]{helvet}      % Helvetica headings
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{ink}{HTML}{1B1D21}
+\definecolor{muted}{HTML}{5A6068}
+\definecolor{accent}{HTML}{1F3A5F}
+\definecolor{rule}{HTML}{C9CDD3}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedbottom
+\AtBeginDocument{\color{ink}\fontsize{9.4}{12.1}\selectfont}
+\setlist[itemize]{leftmargin=1.05em,itemsep=1.1pt,topsep=2pt,parsep=0pt,partopsep=0pt,label={\color{accent}\textbullet}}
+
+\hypersetup{
+  pdftitle={James Ashwood — Curriculum Vitae},
+  pdfauthor={James Ashwood},
+  pdfsubject={Software and AI engineering},
+  pdfkeywords={software engineering, artificial intelligence, LLMs, computer science}
+}
+
+% --------------------------------------------------------------------------
+%  Helpers
+% --------------------------------------------------------------------------
+\newcommand{\cvsection}[1]{%
+  \needspace{2.2\baselineskip}%
+  \vspace{5pt}%
+  {\fontfamily{phv}\selectfont\bfseries\fontsize{9.2}{11}\selectfont
+   \color{accent}\MakeUppercase{#1}}\par
+  \vspace{-2pt}{\color{rule}\rule{\textwidth}{0.5pt}}\par
+  \vspace{2.5pt}%
+}
+
+\newcommand{\role}[3]{%
+  {\fontfamily{phv}\selectfont\bfseries\fontsize{9.8}{11.5}\selectfont #1}%
+  \hfill{\fontfamily{phv}\selectfont\fontsize{8.1}{10}\selectfont\color{muted}#2}\par
+  \vspace{0.5pt}{\itshape\fontsize{8.9}{10.6}\selectfont\color{accent}#3}\par
+  \vspace{2pt}%
+}
+
+\newcommand{\project}[2]{%
+  {\fontfamily{phv}\selectfont\bfseries\fontsize{9.2}{11}\selectfont #1}\par
+  \vspace{1pt}{\fontsize{8.8}{11}\selectfont\color{ink}#2}\par
+}
+
+\newcommand{\link}[2]{\href{#1}{#2}}
+
+% --------------------------------------------------------------------------
+\begin{document}
+
+% Header -------------------------------------------------------------------
+\begin{minipage}[b]{0.60\textwidth}
+  {\fontfamily{phv}\selectfont\bfseries\fontsize{25}{27}\selectfont JAMES ASHWOOD}\\[3pt]
+  {\fontfamily{phv}\selectfont\fontsize{9.6}{11}\selectfont\color{accent}\textbf{SOFTWARE \& AI ENGINEER}}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.38\textwidth}
+  \raggedleft
+  {\fontfamily{phv}\selectfont\fontsize{8.3}{11.2}\selectfont
+  \link{mailto:contact@jamesashwood.com}{contact@jamesashwood.com}\\
+  07368 609467\\
+  \link{https://www.linkedin.com/in/james-ashwood-80a840262/}{linkedin.com/in/james-ashwood-80a840262}\\
+  \link{https://github.com/ja927cam}{github.com/ja927cam}\\
+  Cambridge, UK}
+\end{minipage}
+
+\vspace{5pt}
+{\color{rule}\rule{\textwidth}{0.9pt}}
+
+% Profile ------------------------------------------------------------------
+\cvsection{Profile}
+Computer Science undergraduate at Gonville \& Caius, Cambridge, currently on sabbatical
+from Blueberry Consultants to focus on Part IA. Building LLM-powered systems focused on
+cost, safety and measurable impact.
+
+% Education ----------------------------------------------------------------
+\cvsection{Education}
+
+\role{University of Cambridge --- BA (Hons) Computer Science}{Oct 2026 -- Jun 2029 (expected)}{Gonville \& Caius College}
+{\fontsize{8.8}{10.6}\selectfont
+Part IA: Algorithms, Discrete Maths, OOP, Digital Electronics, Intro Graphics, Databases, Hardware.}
+
+\vspace{4pt}
+
+\role{Bishop Vesey's Grammar School}{2019 -- 2026}{A Levels and GCSEs}
+{\fontsize{8.8}{10.6}\selectfont
+A* in Mathematics, Further Mathematics and Computer Science; A in Economics. GCSEs:
+seven grade 9s, two 8s and a 7, plus an A in Additional Mathematics.\\
+Senior Technical Writer (120 students, 30+ industry-reviewed articles); Technology
+Community Lead (AI programme; BBC Radio 4); Intern Lead; House Coordinator (ran the house system for 1,200 students).}
+
+% Experience ---------------------------------------------------------------
+\cvsection{Experience}
+
+\role{Software Developer (on sabbatical) --- Blueberry Consultants}{Jun 2025 -- Present}{Remote \textperiodcentered\ Part-time}
+\begin{itemize}
+  \item Research emerging technology and work with developers to turn it into shipped projects and revenue.
+  \item Cut the cost of LLM-based file analysis by \textbf{55\%} across formats, models and tokenisation methods.
+  \item Designed prompt pipelines for reviewing large projects and tooling for custom structures such as spreadsheets, minimising token use.
+  \item Added validation layers around LLM-generated code, improving safety and robustness; worked with teams worldwide.
+\end{itemize}
+
+\vspace{3pt}
+\role{Junior Software Engineer --- Blueberry Consultants}{Jun 2023}{Birmingham \textperiodcentered\ Work experience}
+\begin{itemize}
+  \item Primary developer on the project that became \textbf{DeskBuddy}, later featured on Dragons' Den; took it from prototype to first test release.
+  \item Handled bug reports and feature requests directly, and presented progress to technical stakeholders and the CEO.
+\end{itemize}
+
+% Projects -----------------------------------------------------------------
+\cvsection{Selected Projects}
+
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\project{NHS Throat Camera}{%
+Flutter app for legacy Android hardware with a UVC camera; custom Kotlin permissions,
+NHS-standard secure OTA updates and an on-device ML model for cancer detection.} &
+\project{DeskBuddy}{%
+Custom C++ firmware for an ESP32-S3 with Wi-Fi and ICS parsing, AWS-built binaries and
+OTA updates. 1,000+ units sold worldwide and supported for three years.}
+\\[5pt]
+\project{ODE CATAM}{%
+Independent Cambridge computational project on ODEs: numerical methods from Euler
+onwards, error and stability analysis, and a formal mathematical report.} &
+\project{Speed Dreams}{%
+Open-source motorsport simulator with 100+ contributors worldwide: PHP features in a
+25-year-old codebase, high-speed telemetry reporting and complex SQL.}
+\\[5pt]
+\project{2D Racing AI}{%
+2D motorsport simulator with realistic physics and a genetic algorithm written from
+scratch, documented in a 350-page technical report.} &
+\project{Photo Organiser Pro}{%
+Windows application with a security-conscious installer, reliable transfers across local,
+external and network drives, and EXIF-based image access.}
+\end{tabularx}
+
+% Skills -------------------------------------------------------------------
+\cvsection{Technical Skills}
+{\fontsize{8.6}{10.8}\selectfont
+\begin{tabularx}{\textwidth}{@{}>{\fontfamily{phv}\selectfont\bfseries\fontsize{8.2}{10.6}\selectfont}p{2.4cm}@{}X@{}}
+Languages & Python, TypeScript/JavaScript, Java, C\#, C++, PHP, SQL, HTML/CSS, Bash\\
+AI \& data & LLM tooling, prompt engineering, RAG, MCP servers, validation and evaluation; NumPy, pandas, Matplotlib, TensorFlow\\
+Systems & Linux, Docker, AWS, GitLab CI/CD, Git\\
+Hardware & ESP32-S3, Arduino, Raspberry Pi; Flutter, Kotlin\\
+\end{tabularx}}
+
+% Awards -------------------------------------------------------------------
+\cvsection{Awards \& Achievements}
+{\fontsize{8.6}{10.8}\selectfont
+\begin{tabularx}{\textwidth}{@{}X X@{}}
+Caius Explore --- Winner $\times$2 (Maths \& Computer Science) & British Informatics Olympiad --- Best in School $\times$6\\
+OUCC \& Bebras UK --- 1st $\times$2, Distinction $\times$4 & Perse Programming Challenge --- 1st $\times$2\\
+UK Maths Challenge --- Distinction $\times$7, Best in School $\times$2 & F1 in Schools --- Fastest Designed Car in Region $\times$2\\
+\end{tabularx}}
+
+\end{document}

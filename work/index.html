@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — James Ashwood</title>
+<meta name="description" content="Selected projects by James Ashwood: Strata, an NHS throat camera, DeskBuddy, Speed Dreams, numerical methods and racing simulators.">
+<link rel="canonical" href="https://www.jamesashwood.com/work/">
+<meta name="author" content="James Ashwood">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101210" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.jamesashwood.com/work/">
+<meta property="og:title" content="Work — James Ashwood">
+<meta property="og:description" content="Selected projects: Strata, an NHS throat camera, DeskBuddy, Speed Dreams and more.">
+<meta property="og:image" content="https://www.jamesashwood.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg?v=5" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=5">
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead" id="top">
+  <div class="shell masthead-inner">
+    <a class="wordmark" href="/" aria-label="James Ashwood, home">
+      <span class="wordmark-mark" aria-hidden="true"></span>
+      <span>James Ashwood</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="/">About</a>
+      <a class="active" href="/work/">Work</a>
+      <a href="/notes/">Notes</a>
+      <a href="/ideas/">Ideas</a>
+      <a href="/cv/">CV</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="masthead-tools">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="shell page-section">
+  <header class="page-head">
+    <p class="page-kicker">Work</p>
+    <h1>Things I've built<span class="period">.</span></h1>
+    <p class="page-intro">
+      Software, hardware and a few mathematical detours. Some of these shipped to customers;
+      some were built to answer a question. All of them taught me something.
+    </p>
+    <div class="page-meta">
+      <span>7 projects</span>
+      <a href="https://github.com/ja927cam" target="_blank" rel="noopener">More on GitHub ↗</a>
+    </div>
+  </header>
+
+  <article class="featured" id="strata">
+    <h2>Strata</h2>
+    <p class="featured-meta">Self-hosted geospatial workspace · 2026</p>
+    <p>
+      A self-hosted geospatial workspace for a NAS, home server or VPS. Strata serves
+      OpenStreetMap-based basemaps, lets you add and manage private vector and raster layers,
+      imports GeoJSON, GeoPackage, Shapefile, KML, GPX, GeoTIFF/COG, WMS, WFS, ArcGIS and STAC
+      data, and ingests geotagged photos with EXIF metadata. It can also import satellite
+      embeddings for analysis.
+    </p>
+    <p>
+      The stack is Docker Compose with PostGIS, FastAPI, Redis/RQ workers, React and MapLibre
+      on the front end, TileServer GL and Caddy. It includes accounts, roles, per-layer
+      permissions, version history, background import jobs and a catalogue of 50+ public map
+      overlays.
+    </p>
+    <ul class="featured-tags">
+      <li>Docker</li><li>PostGIS</li><li>FastAPI</li><li>React</li><li>MapLibre</li><li>Redis</li><li>Geospatial</li>
+    </ul>
+    <p class="featured-links">
+      <a href="https://github.com/ja927cam/strata" target="_blank" rel="noopener">Source on GitHub ↗</a>
+    </p>
+  </article>
+
+  <section aria-label="More projects">
+    <article class="work-detail" id="nhs">
+      <div>
+        <h3>NHS throat camera</h3>
+        <p class="work-meta">Healthcare · Applied ML</p>
+      </div>
+      <div>
+        <p>
+          A Flutter app for legacy Android hardware that connects a UVC camera and helps
+          clinicians spot signs of throat cancer. I wrote the custom Kotlin permission layer,
+          implemented NHS-standard secure over-the-air updates, and helped integrate the
+          on-device ML model that analyses imagery.
+        </p>
+        <p class="work-tags">Flutter · Kotlin · On-device ML · OTA</p>
+      </div>
+    </article>
+
+    <article class="work-detail" id="deskbuddy">
+      <div>
+        <h3>DeskBuddy</h3>
+        <p class="work-meta">Hardware · Product · 2023–2026</p>
+      </div>
+      <div>
+        <p>
+          A desk calendar that keeps itself up to date. Custom C++ firmware for an ESP32-S3
+          with Wi-Fi and ICS parsing, AWS-built binaries and over-the-air updates. More than
+          1,000 units sold worldwide and supported for three years.
+        </p>
+        <p class="work-tags">C++ · ESP32-S3 · AWS · IoT</p>
+      </div>
+    </article>
+
+    <article class="work-detail" id="speed-dreams">
+      <div>
+        <h3>Speed Dreams</h3>
+        <p class="work-meta">Open source · Simulation</p>
+      </div>
+      <div>
+        <p>
+          Contributions to a motorsport simulator maintained by more than a hundred developers
+          worldwide: PHP functionality in a 25-year-old codebase, high-speed telemetry
+          reporting, and complex SQL functions against a foreign database. I also help run the
+          weekly racing community and write the occasional race report.
+        </p>
+        <p class="work-tags">PHP · SQL · Telemetry · Community</p>
+        <p class="work-tags">
+          <a class="inline" href="https://speed-dreams.net/en/blog/racing-report-june-2025" target="_blank" rel="noopener">Racing report, June 2025 ↗</a>
+        </p>
+      </div>
+    </article>
+
+    <article class="work-detail" id="catam">
+      <div>
+        <h3>ODE CATAM</h3>
+        <p class="work-meta">Mathematics · Numerical methods</p>
+      </div>
+      <div>
+        <p>
+          An independent Cambridge computational project on ordinary differential equations:
+          numerical methods from Euler onwards, error and stability analysis, and a formal
+          mathematical report built on both deduction and computation.
+        </p>
+        <p class="work-tags">Numerical methods · Python · Technical writing</p>
+      </div>
+    </article>
+
+    <article class="work-detail" id="racing-ai">
+      <div>
+        <h3>2D racing AI</h3>
+        <p class="work-meta">Motorsport · Genetic algorithms</p>
+      </div>
+      <div>
+        <p>
+          A 2D motorsport simulator with realistic physics, built from the ground up, plus a
+          genetic algorithm written from scratch to learn racing lines. Documented in a
+          350-page report covering the algorithms, training techniques and results.
+        </p>
+        <p class="work-tags">Simulation · Genetic algorithms · Physics</p>
+      </div>
+    </article>
+
+    <article class="work-detail" id="photo-organiser">
+      <div>
+        <h3>Photo Organiser Pro</h3>
+        <p class="work-meta">Desktop · Tooling</p>
+      </div>
+      <div>
+        <p>
+          A complete Windows application with a security-conscious installer, reliable file
+          transfers across local, external and network drives, and EXIF-based image access
+          designed to work with a wide range of cameras.
+        </p>
+        <p class="work-tags">Windows · EXIF · Installer</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="contact" id="contact">
+    <div>
+      <h2>Something here worth talking about?</h2>
+      <p>I'm always happy to go into more detail, share code, or hear where I got it wrong.</p>
+      <div class="contact-links">
+        <a href="https://github.com/ja927cam" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/james-ashwood-80a840262/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </div>
+    <div>
+      <a class="contact-email" href="mailto:contact@jamesashwood.com">contact@jamesashwood.com</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer shell">
+  <p>© <span id="year">2026</span> James Ashwood</p>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="/">About</a>
+    <a href="/work/">Work</a>
+    <a href="/notes/">Notes</a>
+    <a href="/ideas/">Ideas</a>
+    <a href="/cv/">CV</a>
+  </nav>
+  <a href="#top" class="to-top">Top <span aria-hidden="true">↑</span></a>
+</footer>
+
+<script src="/assets/main.js?v=5" defer></script>
+</body>
+</html>

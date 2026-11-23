@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>James Ashwood — Software &amp; AI Engineer</title>
+<meta name="description" content="James Ashwood is a software engineer and Computer Science undergraduate at Gonville &amp; Caius, Cambridge, building LLM-powered systems at Blueberry Consultants. Projects, ideas and a full CV.">
+<link rel="canonical" href="https://www.jamesashwood.com/">
+<meta name="author" content="James Ashwood">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101210" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.jamesashwood.com/">
+<meta property="og:title" content="James Ashwood — Software &amp; AI Engineer">
+<meta property="og:description" content="Software engineer and Computer Science undergraduate at Gonville &amp; Caius, Cambridge. Projects, ideas and a full CV.">
+<meta property="og:image" content="https://www.jamesashwood.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="James Ashwood">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="James Ashwood — Software &amp; AI Engineer">
+<meta name="twitter:description" content="Software engineer and Computer Science undergraduate at Gonville &amp; Caius, Cambridge.">
+<meta name="twitter:image" content="https://www.jamesashwood.com/assets/og.png">
+
+<link rel="icon" href="/assets/favicon.svg?v=5" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/favicon.svg?v=5">
+<link rel="preload" href="/assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=5">
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch (e) {}
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "James Ashwood",
+  "url": "https://www.jamesashwood.com/",
+  "email": "mailto:contact@jamesashwood.com",
+  "jobTitle": "Software Developer",
+  "description": "Software engineer and Computer Science undergraduate at Gonville & Caius, Cambridge.",
+  "worksFor": { "@type": "Organization", "name": "Blueberry Consultants" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "University of Cambridge" },
+    { "@type": "EducationalOrganization", "name": "Bishop Vesey's Grammar School" }
+  ],
+  "knowsAbout": ["Artificial Intelligence", "Large Language Models", "Algorithms", "Software Engineering", "Computational Modelling", "Geospatial systems"],
+  "sameAs": [
+    "https://www.linkedin.com/in/james-ashwood-80a840262/",
+    "https://x.com/JimmyAshwood",
+    "https://github.com/ja927cam"
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead" id="top">
+  <div class="shell masthead-inner">
+    <a class="wordmark" href="/" aria-label="James Ashwood, home">
+      <span class="wordmark-mark" aria-hidden="true"></span>
+      <span>James Ashwood</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a class="active" href="/">About</a>
+      <a href="/work/">Work</a>
+      <a href="/notes/">Notes</a>
+      <a href="/ideas/">Ideas</a>
+      <a href="/cv/">CV</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="masthead-tools">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="shell">
+
+  <section class="intro" id="about">
+    <div class="intro-main">
+      <h1>James Ashwood</h1>
+      <p class="role">Software &amp; AI engineer · Cambridge</p>
+      <p class="lede">
+        First-year Computer Science undergraduate at <a class="inline" href="https://www.cai.cam.ac.uk" target="_blank" rel="noopener">Gonville &amp; Caius, Cambridge</a>.
+        I'm currently on sabbatical from <a class="inline" href="https://www.blueberryconsultants.co.uk" target="_blank" rel="noopener">Blueberry Consultants</a>
+        to focus on my degree, and I build tools that make large language models useful — and study the algorithms underneath them.
+      </p>
+
+      <div class="prose">
+        <p>
+          I like problems where the theory has to survive contact with a real system. Most of
+          my work sits where language models meet actual software: prompt pipelines, validation
+          layers, and tooling that has to be reliable enough for other people to use.
+        </p>
+        <p>
+          At Blueberry I cut the cost of LLM-based document analysis by <strong>55%</strong>,
+          built tooling that lets models work with spreadsheets and other structured formats,
+          and added safety checks around generated code. I care about the unglamorous parts —
+          evaluation, failure modes, and making the output something a person can trust.
+        </p>
+        <p>
+          I studied Maths, Further Maths, Computer Science and Economics at Bishop Vesey's
+          Grammar School. Most of what I actually learned came from building things outside the
+          syllabus: an independent numerical project on ordinary differential equations for
+          Cambridge, a 2D racing simulator with a genetic algorithm written from scratch, and
+          <strong>DeskBuddy</strong>, a desk calendar that ended up in more than a thousand homes.
+        </p>
+        <p>
+          I won the Caius Explore essay competition twice, writing about algorithms in data
+          centres and the role of AI in mathematics. I care about formal methods, compilers and
+          systems, and I'm increasingly interested in how verification and machine learning can
+          keep each other honest. Outside of work I race in the
+          <a class="inline" href="https://www.speed-dreams.net" target="_blank" rel="noopener">Speed Dreams</a>
+          community, write numerical methods for fun, and read too much about motorsport strategy.
+        </p>
+        <p>
+          This site is a working notebook: <a class="inline" href="/ideas/">ideas</a> I'd like
+          to chase and <a class="inline" href="/work/">things I've built</a>. If any of it is
+          interesting, <a class="inline" href="#contact">my inbox is open</a>.
+        </p>
+      </div>
+    </div>
+
+    <aside class="sidebar" aria-label="At a glance">
+      <div class="side-block">
+        <h2 class="side-head">Identities</h2>
+        <dl class="side-list">
+          <div><dt>Email</dt><dd><a href="mailto:contact@jamesashwood.com">contact@jamesashwood.com</a></dd></div>
+          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/james-ashwood-80a840262/" target="_blank" rel="noopener">james-ashwood</a></dd></div>
+          <div><dt>X</dt><dd><a href="https://x.com/JimmyAshwood" target="_blank" rel="noopener">@JimmyAshwood</a></dd></div>
+          <div><dt>GitHub</dt><dd><a href="https://github.com/ja927cam" target="_blank" rel="noopener">ja927cam</a></dd></div>
+        </dl>
+      </div>
+
+      <div class="side-block">
+        <h2 class="side-head">Now</h2>
+        <ul class="side-now">
+          <li><strong>Part IA</strong> at Gonville &amp; Caius</li>
+          <li><strong>On sabbatical</strong> from Blueberry to focus on academics</li>
+          <li><strong>Building</strong> One Million Chessboards in OCaml</li>
+          <li><strong>Racing</strong> in the Speed Dreams community</li>
+          <li><strong>Based in</strong> Cambridge, UK</li>
+        </ul>
+      </div>
+
+      <div class="side-block">
+        <h2 class="side-head">Education</h2>
+        <ul class="side-now">
+          <li><strong>University of Cambridge</strong><br>BA Computer Science, 2026–2029</li>
+          <li><strong>Bishop Vesey's Grammar School</strong><br>Maths A*, Further Maths A*, Computer Science A*, Economics A</li>
+        </ul>
+      </div>
+
+    </aside>
+  </section>
+
+  <!-- Work -->
+  <section class="block" id="work">
+    <div class="block-head">
+      <h2>Selected work</h2>
+      <a href="/work/">All work (7) →</a>
+    </div>
+    <div class="work-grid">
+      <article class="work">
+        <h3><a href="/work/#strata">Strata</a></h3>
+        <p class="work-meta">Geospatial workspace · 2026</p>
+        <p>Self-hosted maps, private layers and photo ingest for a NAS or home server. PostGIS, FastAPI, React and MapLibre in a Docker stack.</p>
+        <p class="work-tags">PostGIS · FastAPI · React · Docker</p>
+      </article>
+
+      <article class="work">
+        <h3><a href="/work/#nhs">NHS throat camera</a></h3>
+        <p class="work-meta">Healthcare · Applied ML</p>
+        <p>A Flutter app for legacy Android hardware with a UVC camera, NHS-standard OTA updates and an on-device model for cancer detection.</p>
+        <p class="work-tags">Flutter · Kotlin · On-device ML</p>
+      </article>
+
+      <article class="work">
+        <h3><a href="/work/#deskbuddy">DeskBuddy</a></h3>
+        <p class="work-meta">Hardware · Product</p>
+        <p>An ESP32-S3 desk calendar with Wi-Fi, ICS parsing and OTA updates. More than 1,000 units sold and supported for three years.</p>
+        <p class="work-tags">C++ · ESP32-S3 · AWS</p>
+      </article>
+
+      <article class="work">
+        <h3><a href="/work/#speed-dreams">Speed Dreams</a></h3>
+        <p class="work-meta">Open source · Simulation</p>
+        <p>PHP, telemetry and SQL work in a motorsport simulator maintained by 100+ developers worldwide.</p>
+        <p class="work-tags">PHP · SQL · Open source</p>
+      </article>
+
+      <article class="work">
+        <h3><a href="/work/#catam">ODE CATAM</a></h3>
+        <p class="work-meta">Mathematics · Numerical methods</p>
+        <p>An independent Cambridge computational project on ODEs: Euler onwards, stability, error analysis and a formal report.</p>
+        <p class="work-tags">Numerical methods · Python</p>
+      </article>
+
+      <article class="work">
+        <h3><a href="/work/#racing-ai">2D racing AI</a></h3>
+        <p class="work-meta">Motorsport · Genetic algorithms</p>
+        <p>A physics-based racing simulator and a genetic algorithm written from scratch, documented in a 350-page report.</p>
+        <p class="work-tags">Simulation · Algorithms</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="block" id="experience">
+    <div class="block-head">
+      <h2>Experience</h2>
+      <a href="/cv/">Full CV →</a>
+    </div>
+    <div class="exp-list">
+      <article class="exp">
+        <span class="exp-date">2025 — 2026</span>
+        <div>
+          <h3>Software Developer <span class="muted">(on sabbatical)</span></h3>
+          <p class="exp-org">Blueberry Consultants · Remote, part-time</p>
+          <p>On sabbatical to focus on Part IA. Previously built LLM tooling for document analysis, code review and structured data; cut analysis cost by 55%.</p>
+        </div>
+      </article>
+      <article class="exp">
+        <span class="exp-date">2023</span>
+        <div>
+          <h3>Junior Software Engineer</h3>
+          <p class="exp-org">Blueberry Consultants · Work experience</p>
+          <p>Primary developer on the project that became DeskBuddy; took it from prototype to first test release and presented it to the CEO.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="split">
+    <!-- Notes -->
+    <section class="block" id="notes">
+      <div class="block-head">
+        <h2>Notes</h2>
+        <a href="/notes/">All notes →</a>
+      </div>
+      <div class="note-list">
+        <a class="note-item" href="/notes/one-million-chessboards.html">
+          <time datetime="2026-11-23">23 Nov 2026</time>
+          <h3>One million chessboards, in OCaml</h3>
+          <p>64 million squares, a 25×25 cache and a binary WebSocket protocol.</p>
+        </a>
+        <a class="note-item" href="/notes/offline-maps.html">
+          <time datetime="2026-11-09">9 Nov 2026</time>
+          <h3>Maps that work without a connection</h3>
+          <p>OsmAnd, OpenStreetMap data and keeping the useful parts local.</p>
+        </a>
+        <a class="note-item" href="/notes/small-models.html">
+          <time datetime="2026-10-18">18 Oct 2026</time>
+          <h3>Small models, local loops</h3>
+          <p>Building an overnight harness for local coding models, and steering a chat model by its neurons.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Ideas -->
+    <section class="block" id="ideas">
+      <div class="block-head">
+        <h2>Ideas</h2>
+        <a href="/ideas/">All ideas →</a>
+      </div>
+      <div class="idea-list">
+        <article class="idea">
+          <span class="idea-num">01</span>
+          <div>
+            <h3><a href="/ideas/#evals">Evaluation as a first-class artefact</a></h3>
+            <p>Most LLM tools are judged by vibes. Evals should be part of the product, not an afterthought.</p>
+          </div>
+        </article>
+        <article class="idea">
+          <span class="idea-num">02</span>
+          <div>
+            <h3><a href="/ideas/#verification">Verification as an LLM safety net</a></h3>
+            <p>What changes if generated code has to pass a type, a proof obligation or a test it cannot rewrite?</p>
+          </div>
+        </article>
+        <article class="idea">
+          <span class="idea-num">03</span>
+          <div>
+            <h3><a href="/ideas/#small-models">Small models, sharp tools</a></h3>
+            <p>Narrow tools built around small local models can be cheaper, faster and easier to trust.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- Awards -->
+  <section class="block" id="awards">
+    <div class="block-head">
+      <h2>Awards</h2>
+      <span class="mono-label">Selected honours</span>
+    </div>
+    <ul class="awards">
+      <li><span class="award-name">Caius Explore</span><span class="award-detail">Winner ×2 · Maths &amp; CS</span></li>
+      <li><span class="award-name">British Informatics Olympiad</span><span class="award-detail">Best in School ×6</span></li>
+      <li><span class="award-name">OUCC &amp; Bebras UK</span><span class="award-detail">1st ×2 · Distinction ×4</span></li>
+      <li><span class="award-name">Perse Programming Challenge</span><span class="award-detail">1st ×2</span></li>
+      <li><span class="award-name">UK Maths Challenge</span><span class="award-detail">Distinction ×7 · Best in School ×2</span></li>
+      <li><span class="award-name">F1 in Schools</span><span class="award-detail">Fastest Designed Car in Region ×2</span></li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div>
+      <h2>Contact</h2>
+      <p>
+        Always happy to talk about computer science, AI, algorithms or software engineering —
+        and open to research projects and internships.
+      </p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/james-ashwood-80a840262/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/JimmyAshwood" target="_blank" rel="noopener">X</a>
+        <a href="https://github.com/ja927cam" target="_blank" rel="noopener">GitHub</a>
+            <a href="/cv/james-ashwood-cv.pdf" target="_blank" rel="noopener">CV PDF</a>
+      </div>
+    </div>
+    <div>
+      <a class="contact-email" href="mailto:contact@jamesashwood.com">contact@jamesashwood.com</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer shell">
+  <p>© <span id="year">2026</span> James Ashwood</p>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="/">About</a>
+    <a href="/work/">Work</a>
+    <a href="/notes/">Notes</a>
+    <a href="/ideas/">Ideas</a>
+    <a href="/cv/">CV</a>
+  </nav>
+  <a href="#top" class="to-top">Top <span aria-hidden="true">↑</span></a>
+</footer>
+
+<script src="/assets/main.js?v=5" defer></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# LaTeX build artefacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Local preview / screenshots
+page-*.png
+.DS_Store

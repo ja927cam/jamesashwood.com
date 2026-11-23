@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes — James Ashwood</title>
+<meta name="description" content="Short technical notes from James Ashwood on OCaml, local models, maps and systems.">
+<link rel="canonical" href="https://www.jamesashwood.com/notes/">
+<meta name="author" content="James Ashwood">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101210" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.jamesashwood.com/notes/">
+<meta property="og:title" content="Notes — James Ashwood">
+<meta property="og:description" content="Short technical notes on OCaml, local models, maps and systems.">
+<meta property="og:image" content="https://www.jamesashwood.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg?v=5" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=5">
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="masthead" id="top">
+  <div class="shell masthead-inner">
+    <a class="wordmark" href="/" aria-label="James Ashwood, home">
+      <span class="wordmark-mark" aria-hidden="true"></span>
+      <span>James Ashwood</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="/">About</a>
+      <a href="/work/">Work</a>
+      <a class="active" href="/notes/">Notes</a>
+      <a href="/ideas/">Ideas</a>
+      <a href="/cv/">CV</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="masthead-tools">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="shell page-section">
+  <header class="page-head">
+    <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Writing</p>
+    <h1>Notes<span class="period">.</span></h1>
+    <p class="page-intro">
+      Short technical notes on things I've been building. No schedule, no hot takes — mostly
+      the parts I had to work out for myself.
+    </p>
+    <div class="page-meta">
+      <span>3 notes</span>
+      <span>Last updated November 2026</span>
+    </div>
+  </header>
+
+  <div class="note-list">
+    <a class="note-item" href="/notes/one-million-chessboards.html">
+      <time datetime="2026-11-23">23 Nov 2026</time>
+      <h3>One million chessboards, in OCaml</h3>
+      <p>64 million squares, a 25×25 snapshot cache and a binary WebSocket protocol.</p>
+    </a>
+    <a class="note-item" href="/notes/offline-maps.html">
+      <time datetime="2026-11-09">9 Nov 2026</time>
+      <h3>Maps that work without a connection</h3>
+      <p>OsmAnd, OpenStreetMap data and keeping the useful parts local.</p>
+    </a>
+    <a class="note-item" href="/notes/small-models.html">
+      <time datetime="2026-10-18">18 Oct 2026</time>
+      <h3>Small models, local loops</h3>
+      <p>Building an overnight harness for local coding models, and steering a chat model by its neurons.</p>
+    </a>
+  </div>
+</main>
+
+<footer class="site-footer shell">
+  <p>© <span id="year">2026</span> James Ashwood</p>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="/">About</a>
+    <a href="/work/">Work</a>
+    <a href="/notes/">Notes</a>
+    <a href="/ideas/">Ideas</a>
+    <a href="/cv/">CV</a>
+  </nav>
+  <a href="#top" class="to-top">Top <span aria-hidden="true">↑</span></a>
+</footer>
+<script src="/assets/main.js?v=5" defer></script>
+</body>
+</html>

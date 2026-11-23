@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maps that work without a connection — James Ashwood</title>
+<meta name="description" content="OsmAnd, OpenStreetMap data and keeping the useful parts of a map stack local.">
+<link rel="canonical" href="https://www.jamesashwood.com/notes/offline-maps.html">
+<meta name="author" content="James Ashwood">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101210" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.jamesashwood.com/notes/offline-maps.html">
+<meta property="og:title" content="Maps that work without a connection">
+<meta property="og:description" content="OsmAnd, OpenStreetMap data and keeping the useful parts of a map stack local.">
+<meta property="og:image" content="https://www.jamesashwood.com/assets/og.png">
+<meta property="article:published_time" content="2026-11-09">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg?v=5" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=5">
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="masthead" id="top">
+  <div class="shell masthead-inner">
+    <a class="wordmark" href="/" aria-label="James Ashwood, home">
+      <span class="wordmark-mark" aria-hidden="true"></span>
+      <span>James Ashwood</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="/">About</a>
+      <a href="/work/">Work</a>
+      <a class="active" href="/notes/">Notes</a>
+      <a href="/ideas/">Ideas</a>
+      <a href="/cv/">CV</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="masthead-tools">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <article class="post">
+    <a class="back-link" href="/notes/"><span aria-hidden="true">←</span> All notes</a>
+    <header class="post-head">
+      <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Note <span class="kicker-sep">/</span> Maps</p>
+      <h1>Maps that work without a connection</h1>
+      <p class="post-dek">OsmAnd, OpenStreetMap data and keeping the useful parts of a map stack local.</p>
+      <div class="post-meta">
+        <span>9 November 2026</span>
+        <span>4 min read</span>
+        <span>Maps · Data</span>
+      </div>
+    </header>
+
+    <div class="post-body">
+      <p>
+        A map looks like one thing on a phone. Underneath it is at least four: a set of tiles
+        to draw, a search index, a routing graph and a pile of metadata. “Offline maps” usually
+        means downloading all four for a region, and the interesting engineering is in which
+        of them you actually need.
+      </p>
+      <p>
+        I've been using <strong>OsmAnd</strong> for offline regions and playing with
+        OpenStreetMap data on a home server. The contrast is useful: OsmAnd gives you a
+        polished offline client with routing and search, while a local stack lets you keep
+        private layers and edit the data you care about.
+      </p>
+
+      <h2>Tiles are for looking, data is for asking</h2>
+      <p>
+        Raster tiles are just pictures in a pyramid. They are simple to serve and cache, but
+        they cannot be restyled and they get expensive at high zoom. Vector tiles keep the
+        geometry and let the client decide how to draw it; the trade is a renderer and a style
+        to maintain.
+      </p>
+      <p>
+        For a personal map server, the split matters more than the format. Viewing wants tiles
+        at a few zoom levels. Asking questions wants the actual geometry in a database, with
+        coordinates in a known CRS and an index that can answer “what is near here?” without
+        scanning a million features.
+      </p>
+
+      <h2>OsmAnd does the hard offline part</h2>
+      <p>
+        The reason OsmAnd is useful offline is not only that it stores tiles. It also ships a
+        routing graph and search data for the region, which is the part people forget when
+        they imagine a map download as a folder of images. A route that works in a tunnel is a
+        different engineering problem from a map that renders in a tunnel.
+      </p>
+      <p>
+        That is also why region sizes vary so much. A city with dense footpaths can cost more
+        than a much larger area of empty land, because the graph and the address data are doing
+        the work.
+      </p>
+
+      <h2>Keeping private layers at home</h2>
+      <p>
+        On the server side I've been using <strong>Strata</strong>, a small geospatial
+        workspace built around PostGIS, MapLibre and TileServer GL. The useful part is not
+        serving another basemap; it is being able to import a GeoJSON file, a GPX track or a
+        batch of geotagged photos, keep them private, and still see them on the same map as
+        OpenStreetMap data.
+      </p>
+      <p>
+        That introduces the usual geographic annoyances: CRS detection and reprojection,
+        invalid geometry, clipping, and deciding whether a feature is a tile or a row. The
+        answer is usually “both”: a fast, denormalised representation for drawing and a
+        normalised one for editing and history.
+      </p>
+
+      <h2>The bit I keep coming back to</h2>
+      <p>
+        Offline maps are a good reminder that “the cloud” is mostly a cache with better
+        marketing. If the data is small enough and the formats are open, a phone and a home
+        server can do a surprising amount without a network. The hard part is not storage; it
+        is keeping the four maps — tiles, search, routing and data — consistent with each other.
+      </p>
+    </div>
+
+    <footer class="post-foot">
+      <p>Written by James Ashwood · <a href="mailto:contact@jamesashwood.com">Reply by email</a></p>
+      <p><a href="/notes/">All notes <span aria-hidden="true">→</span></a></p>
+    </footer>
+  </article>
+</main>
+
+<footer class="site-footer shell">
+  <p>© <span id="year">2026</span> James Ashwood</p>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="/">About</a>
+    <a href="/work/">Work</a>
+    <a href="/notes/">Notes</a>
+    <a href="/ideas/">Ideas</a>
+    <a href="/cv/">CV</a>
+  </nav>
+  <a href="#top" class="to-top">Top <span aria-hidden="true">↑</span></a>
+</footer>
+<script src="/assets/main.js?v=5" defer></script>
+</body>
+</html>
