@@ -1293,3 +1293,12 @@ html[data-theme="light"] .icon-moon { display: none; }
   border-bottom: 1px solid transparent;
 }
 .cv-contact a:hover { border-color: var(--accent); }
+
+.idea p.idea-priority {
+  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+  color: var(--muted);
+}
