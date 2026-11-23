@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work — James Ashwood</title>
-<meta name="description" content="Selected projects by James Ashwood: Strata, an NHS throat camera, DeskBuddy, Speed Dreams, numerical methods and racing simulators.">
+<meta name="description" content="Selected projects by James Ashwood: One Million Chessboards, an NHS throat camera, DeskBuddy, Speed Dreams, numerical methods and racing simulators.">
 <link rel="canonical" href="https://www.jamesashwood.com/work/">
 <meta name="author" content="James Ashwood">
 <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
@@ -13,13 +13,13 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.jamesashwood.com/work/">
 <meta property="og:title" content="Work — James Ashwood">
-<meta property="og:description" content="Selected projects: Strata, an NHS throat camera, DeskBuddy, Speed Dreams and more.">
+<meta property="og:description" content="Selected projects: One Million Chessboards, an NHS throat camera, DeskBuddy, Speed Dreams and more.">
 <meta property="og:image" content="https://www.jamesashwood.com/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" href="/assets/favicon.svg?v=8" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.svg?v=9" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/styles.css?v=8">
+<link rel="stylesheet" href="/assets/styles.css?v=9">
 <script>
   (function () {
     try {
@@ -72,27 +72,25 @@
     </div>
   </header>
 
-  <article class="featured" id="strata">
-    <h2>Strata</h2>
-    <p class="featured-meta">Self-hosted geospatial workspace · 2026</p>
+  <article class="featured" id="one-million-chessboards">
+    <h2>One Million Chessboards</h2>
+    <p class="featured-meta">OCaml · Systems · 2026</p>
     <p>
-      A self-hosted geospatial workspace for a NAS, home server or VPS. Strata serves
-      OpenStreetMap-based basemaps, lets you add and manage private vector and raster layers,
-      imports GeoJSON, GeoPackage, Shapefile, KML, GPX, GeoTIFF/COG, WMS, WFS, ArcGIS and STAC
-      data, and ingests geotagged photos with EXIF metadata. It can also import satellite
-      embeddings for analysis.
+      A server-authoritative world of 1,000 × 1,000 chessboards — 64 million squares and
+      32 million starting pieces — with a pannable Brr/WASM client. The server keeps packed
+      board state in flat arrays, serves 25 × 25 snapshots with one-byte pieces, and
+      broadcasts live moves over a binary WebSocket protocol.
     </p>
     <p>
-      The stack is Docker Compose with PostGIS, FastAPI, Redis/RQ workers, React and MapLibre
-      on the front end, TileServer GL and Caddy. It includes accounts, roles, per-layer
-      permissions, version history, background import jobs and a catalogue of 50+ public map
-      overlays.
+      The interesting constraints were memory and fan-out: roughly 520 MB of resident state,
+      a single authoritative writer, batched event frames and a cache that has to survive
+      duplicate and out-of-order moves.
     </p>
     <ul class="featured-tags">
-      <li>Docker</li><li>PostGIS</li><li>FastAPI</li><li>React</li><li>MapLibre</li><li>Redis</li><li>Geospatial</li>
+      <li>OCaml</li><li>Brr / WASM</li><li>WebSockets</li><li>Systems</li>
     </ul>
     <p class="featured-links">
-      <a href="https://github.com/ja927cam/strata" target="_blank" rel="noopener">Source on GitHub ↗</a>
+      <a href="/notes/one-million-chessboards.html">Read the note ↗</a>
     </p>
   </article>
 
@@ -220,6 +218,6 @@
   <a href="#top" class="to-top">Top <span aria-hidden="true">↑</span></a>
 </footer>
 
-<script src="/assets/main.js?v=8" defer></script>
+<script src="/assets/main.js?v=9" defer></script>
 </body>
 </html>
